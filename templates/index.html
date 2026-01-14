@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Health Prediction</title>
+ 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!--Dark Mode Toggle Button (GLOBAL) -->
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    aria-label="Toggle dark mode"
+    title="Toggle dark mode"
+>
+    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+</button>
+
+<h1 class="main-title">Menstrual Health Risk Prediction</h1>
+
+<div class="container">
+
+<form method="POST" action="/" class="prediction-form">
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" placeholder="Enter age" required>
+
+    <label for="cycle_length">Cycle Length (days)</label>
+    <input type="number" id="cycle_length" name="cycle_length" placeholder="e.g. 28" required>
+
+    <label for="period_duration">Period Duration (days)</label>
+    <input type="number" id="period_duration" name="period_duration" placeholder="e.g. 5" required>
+
+    <label for="flow_level">Flow Level (0=Low, 1=Medium, 2=High)</label>
+    <input type="number" id="flow_level" name="flow_level" placeholder="0 / 1 / 2" required>
+
+    <label for="cramps">Cramps (0=No, 1=Yes)</label>
+    <input type="number" id="cramps" name="cramps" placeholder="0 or 1" required>
+
+    <label for="mood_swings">Mood Swings (0=No, 1=Yes)</label>
+    <input type="number" id="mood_swings" name="mood_swings" placeholder="0 or 1" required>
+
+    <label for="acne">Acne (0=No, 1=Yes)</label>
+    <input type="number" id="acne" name="acne" placeholder="0 or 1" required>
+
+    <label for="weight_gain">Weight Gain (0=No, 1=Yes)</label>
+    <input type="number" id="weight_gain" name="weight_gain" placeholder="0 or 1" required>
+
+    <label for="hair_fall">Hair Fall (0=No, 1=Yes)</label>
+    <input type="number" id="hair_fall" name="hair_fall" placeholder="0 or 1" required>
+
+    <label for="fatigue">Fatigue (0=No, 1=Yes)</label>
+    <input type="number" id="fatigue" name="fatigue" placeholder="0 or 1" required>
+
+    <label for="irregular_periods">Irregular Periods (0=No, 1=Yes)</label>
+    <input type="number" id="irregular_periods" name="irregular_periods" placeholder="0 or 1" required>
+
+    <label for="missed_periods">Missed Periods (count)</label>
+    <input type="number" id="missed_periods" name="missed_periods" placeholder="e.g. 1" required>
+
+    <label for="last_period_date">Last Period Date</label>
+    <input type="date" id="last_period_date" name="last_period_date">
+
+    <button type="submit">Predict Risk</button>
+</form>
+
+{% if prediction %}
+<div class="result-box">
+    <h3>Prediction Result</h3>
+    <p><strong>Predicted Risk:</strong> {{ prediction }}</p>
+    <p><strong>Advice:</strong> {{ advice }}</p>
+
+    {% if next_period %}
+    <p><strong>Next Period Expected On:</strong> {{ next_period }}</p>
+    {% endif %}
+</div>
+{% endif %}
+
+<p class="logout"><a href="/logout">Logout</a></p>
+
+</div>
+ 
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</body>
+</html>
+
+
+
+

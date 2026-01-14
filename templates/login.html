@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Font Awesome (Moon / Eye icons) -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- 🌙 Dark Mode Toggle Button -->
+<button
+    id="themeToggle"
+    class="theme-toggle"
+    aria-label="Toggle dark mode"
+    title="Toggle dark mode"
+>
+    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+</button>
+
+<!-- Page Title -->
+<h2 class="page-title">Login</h2>
+
+<!-- Login Form -->
+<form method="POST" action="/login" class="auth-form">
+
+    <label for="login_email">Email</label>
+    <input
+        type="email"
+        id="login_email"
+        name="email"
+        placeholder="Enter your email"
+        required
+    >
+
+    <label for="password">Password</label>
+
+    <!-- Password Input with Eye Toggle -->
+    <div class="password-wrapper">
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+        <i
+            class="fa-solid fa-eye password-toggle"
+            id="togglePassword"
+            aria-label="Show or hide password"
+            title="Show or hide password"
+        ></i>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+
+<!-- Error Message -->
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<!-- Register Link -->
+<p class="auth-link">
+    New user? <a href="/register">Register here</a>
+</p>
+
+<!-- External JavaScript (Dark Mode + Password Toggle) -->
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</body>
+</html>
+
+
+
+
+
+
