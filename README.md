@@ -1,9 +1,10 @@
 # Menstrual Health Risk Prediction System
 
-A machine learning–based web application that predicts menstrual health risks such as **Normal**, **PCOS**, **Hormonal Imbalance**, and **High Risk** based on user-reported symptoms.  
-The system is designed with a strong focus on **medical safety**, **accuracy**, and **real-world usability**.
+ A machine learning–based web application that predicts menstrual health risks such as **Normal**, **PCOS**, **Hormonal Imbalance**, and **High Risk** based on user-reported symptoms and cycle patterns.
 
----
+The system leverages supervised machine learning techniques to analyze multiple health indicators and provide accurate risk classification. It is designed with a strong emphasis on medical safety, ensuring that high-risk cases are prioritized and not missed.
+
+In addition to risk prediction, the application offers decision support features such as medical guidance and next menstrual cycle estimation, making it suitable for real-world use. The project integrates machine learning with a secure, user-friendly web interface, demonstrating an end-to-end approach from data preprocessing and model evaluation to deployment-ready application design.
 
 ##  Features
 
@@ -46,4 +47,27 @@ The system is designed with a strong focus on **medical safety**, **accuracy**, 
 ---
 
 ##  Project Structure
+```
+ Menstrual-Health-Risk-Prediction/
+│
+├── app.py # Flask backend application
+├── model.py # Machine learning training script
+├── requirements.txt # Project dependencies
+├── balanced_dataset.csv # Dataset used for training
+├── generate_dataset.py # Dataset generation/preprocessing script
+│
+├── templates/ # HTML templates
+│ ├── index.html
+│ ├── login.html
+│ └── register.html
+│
+├── static/ # Static files
+│ ├── style.css
+│ └── script.js
+│
+├── rf_risk_model.pkl # Trained Random Forest model
+├── xgb_risk_model.pkl # Trained XGBoost model
+├── scaler.pkl # Feature scaler
+└── label_encoder.pkl # Label encoder
+```
 
