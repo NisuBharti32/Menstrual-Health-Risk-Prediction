@@ -70,4 +70,60 @@ In addition to risk prediction, the application offers decision support features
 ├── scaler.pkl # Feature scaler
 └── label_encoder.pkl # Label encoder
 ```
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/NisuBharti32/Menstrual-Health-Risk-Prediction.git
+cd Menstrual-Health-Risk-Prediction
+```
+### 2. Create Virtual Environment
+``` python -m venv venv
+source venv/Scripts/activate   # on Windows
+```
+### 3. Install Dependencies
+```
+ pip install -r requirements.txt
+```
+ ### 4. Train the Machine Learning Model
+```
+ python model.py
+
+```
+ 
+ ### 5. Run the Application
+ ```
+    python app.py
+ ```
+Open the browser and go to:
+ ```
+ http://127.0.0.1:5000
+
+
+ ```
+
+## Use Case
+
+- Enables users to monitor menstrual health patterns using symptom-based inputs.
+- Predicts potential health risks such as PCOS, hormonal imbalance, and high-risk conditions.
+- Helps in early risk identification to encourage timely medical consultation.
+- Provides basic medical guidance based on predicted risk levels.
+- Estimates the next menstrual cycle date to support personal health tracking.
+
+##  Future Enhancements
+
+- Integration with real clinical datasets
+- Explainable AI (SHAP) for feature importance
+- Mobile application version
+- Doctor/Admin dashboard
+- Cloud deployment (AWS/Render)
+
+##  Disclaimer
+
+This project is intended for educational and research purposes only.
+It is not a substitute for professional medical diagnosis or treatment.
+
+##  Author
+
+Developed as a Machine Learning and Web Development project.
 
