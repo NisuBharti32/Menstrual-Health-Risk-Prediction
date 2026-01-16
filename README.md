@@ -127,3 +127,7 @@ It is not a substitute for professional medical diagnosis or treatment.
 
 Developed as a Machine Learning and Web Development project.
 
+## License
+
+This project is licensed under the MIT License.
+
